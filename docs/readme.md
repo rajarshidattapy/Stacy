@@ -1,8 +1,5 @@
-<p align="center">
-  <img src="../stacyvm/assets/stacy-logo-dark.png" alt="Stacy" width="320" />
-</p>
 
-<h3 align="center">From PRD to deployed dApp, with agents doing the typing.</h3>
+<h3 align="center">Stacy</h3>
 
 <p align="center">
   An AI-assisted smart contract IDE. Describe your project, approve the plan, then watch specialist agents write, test, deploy, and wire it up inside isolated sandboxes.
