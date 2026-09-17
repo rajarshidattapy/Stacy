@@ -12,9 +12,16 @@ export type ProfileMode =
   | { type: "sampling"; temperature: number }
   | { type: "thinking"; budgetTokens: number };
 
+export interface OpenAIProfile {
+  model: string;
+  // Used for thinking-mode profiles, which run on a reasoning model.
+  reasoningEffort?: "low" | "medium" | "high";
+}
+
 export interface ModelProfile {
   name: string;
-  model: string;
+  model: string;         // Anthropic model
+  openai: OpenAIProfile; // equivalent when MODEL_PROVIDER resolves to openai
   mode: ProfileMode;
   maxTokens: number;     // must exceed budgetTokens for thinking profiles
 }
@@ -24,18 +31,21 @@ export const PROFILES = {
   cheap: {
     name: "cheap",
     model: "claude-haiku-4-5-20251001",
+    openai: { model: "gpt-4.1-mini" },
     mode: { type: "sampling", temperature: 0.0 },
     maxTokens: 4096,
   },
   chat: {
     name: "chat",
     model: "claude-sonnet-4-6",
+    openai: { model: "gpt-4.1" },
     mode: { type: "sampling", temperature: 0.4 },
     maxTokens: 4096,
   },
   creative: {
     name: "creative",
     model: "claude-sonnet-4-6",
+    openai: { model: "gpt-4.1" },
     mode: { type: "sampling", temperature: 0.7 },
     maxTokens: 8192,
   },
@@ -43,12 +53,14 @@ export const PROFILES = {
   "standard-think": {
     name: "standard-think",
     model: "claude-sonnet-4-6",
+    openai: { model: "gpt-5", reasoningEffort: "medium" },
     mode: { type: "thinking", budgetTokens: 4096 },
     maxTokens: 12288,
   },
   "deep-think": {
     name: "deep-think",
     model: "claude-opus-4-7",
+    openai: { model: "gpt-5", reasoningEffort: "high" },
     mode: { type: "thinking", budgetTokens: 8192 },
     maxTokens: 24576,
   },

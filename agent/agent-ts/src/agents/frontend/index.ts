@@ -9,7 +9,7 @@ import { buildAllFeTools } from "./tools.ts";
 import { FE_SUBAGENTS } from "./subagents/index.ts";
 import { buildDelegateTool } from "../_runtime/delegateTool.ts";
 import { buildSkillsBackend, READ_ONLY_SKILLS_PERMISSIONS } from "../_runtime/skillsBackend.ts";
-import { buildModel } from "../../models/anthropicClient.ts";
+import { buildModel } from "../../models/client.ts";
 import { selectProfile } from "../../models/selectProfile.ts";
 import { composePrompt } from "../../prompts/composer.ts";
 import { selectFragments } from "../../prompts/selector.ts";

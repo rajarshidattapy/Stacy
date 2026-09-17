@@ -9,6 +9,7 @@
   <img src="https://img.shields.io/badge/Next.js-16-000?style=flat-square&logo=nextdotjs" alt="Next.js"/>
   <img src="https://img.shields.io/badge/LangGraph-deepagents-1C3C3C?style=flat-square" alt="LangGraph"/>
   <img src="https://img.shields.io/badge/Claude-Anthropic-D97757?style=flat-square&logo=anthropic&logoColor=white" alt="Claude"/>
+  <img src="https://img.shields.io/badge/OpenAI-GPT-412991?style=flat-square&logo=openai&logoColor=white" alt="OpenAI"/>
   <img src="https://img.shields.io/badge/Foundry-Solidity-363636?style=flat-square&logo=solidity" alt="Foundry"/>
   <img src="https://img.shields.io/badge/runtime-Bun-fbf0df?style=flat-square&logo=bun&logoColor=black" alt="Bun"/>
 </p>
@@ -56,11 +57,11 @@ stacy/
 
 ## ✦ Quick start
 
-Needs Node 18+, Docker running, and an Anthropic API key. Bun is optional; the scripts fall back to `npx bun`.
+Needs Node 18+, Docker running, and an Anthropic or OpenAI API key. Bun is optional; the scripts fall back to `npx bun`.
 
 ```bash
 npm run setup   # Postgres, StacyVM (npx stacyvm-setup@latest), sandbox image, deps, DB schema
-                # then put ANTHROPIC_API_KEY in agent/agent-ts/.env
+                # then put ANTHROPIC_API_KEY or OPENAI_API_KEY in agent/agent-ts/.env
 npm run dev     # StacyVM + agent server + IDE → http://localhost:3000
 ```
 

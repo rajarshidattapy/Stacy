@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { buildModel } from "../../models/anthropicClient.ts";
+import { buildModel } from "../../models/client.ts";
 import { selectProfile } from "../../models/selectProfile.ts";
 
 export const TodoSchema = z.object({
@@ -19,9 +19,10 @@ export type PhasedPlan = z.infer<typeof PhasedPlanSchema>;
 export type Todo = z.infer<typeof TodoSchema>;
 
 export async function parsePrdToTodos(prdContent: string): Promise<PhasedPlan> {
-  // We must use a sampling profile ("chat" or "cheap") because Anthropic 
-  // forbids forced tool calling (which withStructuredOutput uses) when 
-  // extended thinking is enabled.
+  // We must use a sampling profile ("chat" or "cheap") because Anthropic
+  // forbids forced tool calling (which withStructuredOutput uses) when
+  // extended thinking is enabled. Sampling profiles are non-reasoning models
+  // on OpenAI too.
   const profileName = "chat";
   const model = buildModel(profileName);
 

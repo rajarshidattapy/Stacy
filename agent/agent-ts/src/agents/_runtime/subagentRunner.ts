@@ -11,7 +11,7 @@
 import { createHash } from "node:crypto";
 import { createDeepAgent } from "deepagents";
 import { HumanMessage } from "@langchain/core/messages";
-import { buildModel } from "../../models/anthropicClient.ts";
+import { buildModel } from "../../models/client.ts";
 import { getPool } from "../../memory/db.ts";
 import { buildSkillsBackend, READ_ONLY_SKILLS_PERMISSIONS } from "./skillsBackend.ts";
 import type { RunSubagentArgs, SubagentSpec, SubagentSummary } from "./types.ts";

@@ -23,6 +23,7 @@ import { createThread, getThread, setThreadStatus, touchThread } from "../memory
 import { openAgentRun, runAgentTurn, closeAgentRun } from "../cli/runAgent.ts";
 import { buildAgent, isAgentName, AGENT_NAMES, SANDBOXLESS_AGENTS } from "../agents/registry.ts";
 import type { AgentEvent } from "../streaming/events.ts";
+import { resolveProvider, type ModelProvider } from "../models/client.ts";
 import {
   PathError,
   PREVIEW_PORT,
@@ -103,7 +104,19 @@ async function health(): Promise<Response> {
     getStacyClient().health().then(() => true, () => false),
     Promise.resolve().then(() => getPool().query("SELECT 1")).then(() => true, () => false),
   ]);
-  return json({ ok: stacyvm && database, stacyvm, database, agents: AGENT_NAMES });
+  let model: { provider: ModelProvider | null; error?: string };
+  try {
+    model = { provider: resolveProvider() };
+  } catch (e) {
+    model = { provider: null, error: e instanceof Error ? e.message : String(e) };
+  }
+  return json({
+    ok: stacyvm && database && model.provider !== null,
+    stacyvm,
+    database,
+    model,
+    agents: AGENT_NAMES,
+  });
 }
 
 async function spawnSandbox(req: Request): Promise<Response> {

@@ -1,4 +1,4 @@
-import { buildModel } from "../../models/anthropicClient.ts";
+import { buildModel } from "../../models/client.ts";
 import { writeFile } from "../../tools/filesystem.ts";
 
 export async function generateAgentsMdFiles(

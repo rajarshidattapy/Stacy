@@ -1,6 +1,6 @@
 import { createDeepAgent } from "deepagents";
 import { buildAllPlannerTools } from "./tools.ts";
-import { buildModel } from "../../models/anthropicClient.ts";
+import { buildModel } from "../../models/client.ts";
 import { selectProfile } from "../../models/selectProfile.ts";
 import { composePrompt } from "../../prompts/composer.ts";
 import { getCheckpointer } from "../../memory/checkpointer.ts";

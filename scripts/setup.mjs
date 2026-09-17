@@ -96,7 +96,9 @@ async function main() {
   run(bunCmd, [...bunArgs, "run", "db:migrate"], { cwd: AGENT_DIR });
 
   console.log(`\n${c.green("✔")} Setup complete.`);
-  console.log(`  Add ${c.bold("ANTHROPIC_API_KEY")} to agent/agent-ts/.env if you haven't, then run ${c.bold("npm run dev")}.`);
+  console.log(
+    `  Add ${c.bold("ANTHROPIC_API_KEY")} or ${c.bold("OPENAI_API_KEY")} to agent/agent-ts/.env if you haven't, then run ${c.bold("npm run dev")}.`,
+  );
 }
 
 main().catch((e) => {
