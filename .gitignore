@@ -1,3 +1,4 @@
 stacyvm/
 node_modules/
 .stacyvm/
+.env
