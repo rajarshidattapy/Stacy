@@ -1,0 +1,20 @@
+# Local Postgres for the agents' thread memory and LangGraph checkpoints.
+# StacyVM itself is installed with `npx stacyvm-setup@latest` (see npm run setup).
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: stacyvm
+      POSTGRES_PASSWORD: stacyvm
+      POSTGRES_DB: stacyvm
+    ports:
+      - "5432:5432"
+    volumes:
+      - stacy-pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "stacyvm"]
+      interval: 2s
+      retries: 30
+
+volumes:
+  stacy-pg:

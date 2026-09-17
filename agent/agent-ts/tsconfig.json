@@ -14,8 +14,8 @@
     "types": ["bun-types", "node"],
     "baseUrl": ".",
     "paths": {
-      "stacyvm": ["../stacyvm/sdk/js/src/index.ts"],
-      "stacyvm/*": ["../stacyvm/sdk/js/src/*"]
+      "stacyvm": ["../../stacyvm/sdk/js/src/index.ts"],
+      "stacyvm/*": ["../../stacyvm/sdk/js/src/*"]
     }
   },
   "include": ["src/**/*", "scripts/**/*"]

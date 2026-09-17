@@ -60,6 +60,10 @@ export interface RunAgentTurnArgs {
   runId: string;
   message: string;
   recursionLimit?: number;
+  /** Where events go. Defaults to the terminal printer. */
+  onEvent?: (ev: AgentEvent) => void;
+  /** Aborts the LangGraph stream, e.g. when an HTTP client disconnects. */
+  signal?: AbortSignal;
 }
 
 export interface RunAgentTurnResult {
@@ -70,7 +74,8 @@ export interface RunAgentTurnResult {
 }
 
 export async function runAgentTurn(args: RunAgentTurnArgs): Promise<RunAgentTurnResult> {
-  printEvent({
+  const emit = args.onEvent ?? printEvent;
+  emit({
     type: "agent_started",
     agent: args.agentType,
     threadId: args.threadId,
@@ -90,6 +95,7 @@ export async function runAgentTurn(args: RunAgentTurnArgs): Promise<RunAgentTurn
         version: "v2",
         configurable: { thread_id: args.threadId },
         recursionLimit: args.recursionLimit ?? 60,
+        signal: args.signal,
       },
     );
 
@@ -100,12 +106,12 @@ export async function runAgentTurn(args: RunAgentTurnArgs): Promise<RunAgentTurn
         tokensIn += ev.tokensIn ?? 0;
         tokensOut += ev.tokensOut ?? 0;
       }
-      printEvent(ev);
+      emit(ev);
     }
   } catch (e) {
     status = "failure";
     lastError = e instanceof Error ? e.message : String(e);
-    printEvent({
+    emit({
       type: "error",
       where: "agent.streamEvents",
       message: lastError,
@@ -114,7 +120,7 @@ export async function runAgentTurn(args: RunAgentTurnArgs): Promise<RunAgentTurn
   }
 
   const ms = Date.now() - startedAt;
-  printEvent({
+  emit({
     type: "agent_ended",
     status,
     totalTokens: tokensIn + tokensOut,

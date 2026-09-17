@@ -8,7 +8,10 @@ export type AgentEvent =
   | { type: "thinking_started"; profile?: string; modelName?: string }
   | { type: "thinking_chunk"; text: string }
   | { type: "thinking_ended"; tokensIn?: number; tokensOut?: number; ms?: number }
-  | { type: "tool_call_started"; tool: string; args: Record<string, unknown>; callId?: string }
+  // `planned` marks the early event from the model's tool-call stream (args not
+  // yet known, callId is the model's tool_use id). The later un-planned event
+  // comes from tool execution and carries full args.
+  | { type: "tool_call_started"; tool: string; args: Record<string, unknown>; callId?: string; planned?: boolean }
   | { type: "tool_call_ended"; tool: string; result: unknown; ms?: number; ok: boolean; callId?: string }
   | { type: "todo_updated"; todos: unknown[] }
   | { type: "subagent_spawned"; parentRunId: string; subagentName: string; taskDescription: string; subagentRunId?: string }

@@ -24,7 +24,6 @@ import {
   FileNode,
 } from "@/types/ide";
 import { useStellarIDE } from "@/hooks/useStellarIDE";
-import { useAgentState } from "@/hooks/useAgentState";
 import {
   transformFilesForBackend,
   getActiveContractName,
@@ -709,7 +708,8 @@ function GeneratePageContent() {
   
   // Stellar IDE Hook - provides wallet, compiler, deployer
   const stellarIDE = useStellarIDE();
-  const agentState = useAgentState();
+  // Same instance the sandbox feeds agent events into.
+  const agentState = stellarIDE.sandbox.agentState;
 
   const [interactionMode, setInteractionMode] = useState<"agentic" | "manual">(initialInteractionMode);
   const [ideMode, setIdeMode] = useState<IdeMode>("contract");
@@ -1301,10 +1301,7 @@ export function create${contractName}Client(publicKey: string): ${contractName}C
       type: "ADD_LOG",
       payload: "[sandbox] Spawning development sandbox...",
     });
-    stellarIDE.sandbox.spawn({
-      GROQ_API_KEY: process.env.NEXT_PUBLIC_GROQ_API_KEY || "",
-      AI_PROVIDER: "groq",
-    });
+    stellarIDE.sandbox.spawn();
   }, [stellarIDE.sandbox]);
 
   const handleStopSandbox = useCallback(() => {

@@ -199,6 +199,7 @@ export function useStellarIDE() {
       deleteFile: sandbox.deleteFile,
       setOnFileTreeSync: sandbox.setOnFileTreeSync,
       setOnFileContentSync: sandbox.setOnFileContentSync,
+      handleAgentEvent: sandbox.handleAgentEvent,
     },
 
     // Combined

@@ -3,6 +3,8 @@
   "version": "0.2.0",
   "type": "module",
   "scripts": {
+    "server": "bun src/server/index.ts",
+    "dev": "bun --watch src/server/index.ts",
     "typecheck": "tsc --noEmit",
     "harness": "bun src/cli/test-harness.ts",
     "db:migrate": "bun scripts/db-migrate.ts",

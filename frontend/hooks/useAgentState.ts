@@ -65,44 +65,65 @@ export interface PhaseGroup {
   steps: StepEntry[];
 }
 
+// Tool names come from agent/agent-ts (src/agents/*/tools.ts).
 const TOOL_PHASE_MAP: Record<string, PhaseKey> = {
-  compile_contract: "building",
-  write_file: "building",
-  edit_file: "building",
-  create_file: "building",
-  delete_file: "building",
-  run_command: "building",
-  run_tests: "testing",
-  test_contract: "testing",
-  validate_contract: "testing",
+  kickoff_project: "planning",
+  update_project_todos: "planning",
+  lookup_template: "planning",
+  save_prd: "planning",
+  delegate: "planning",
+  sandbox_write: "building",
+  sandbox_edit: "building",
+  overwrite_file: "building",
+  apply_patch: "building",
+  sandbox_delete: "building",
+  sandbox_move: "building",
+  bash: "building",
+  exec_stream: "building",
+  forge_build: "building",
+  forge_fmt: "building",
+  bun_install: "building",
+  bun_run_build: "building",
+  forge_test: "testing",
+  bun_run_lint: "testing",
+  bun_dev_smoke: "testing",
+  slither_audit: "testing",
+  write_audit_report: "testing",
+  forge_deploy_sepolia: "deploying",
   deploy_contract: "deploying",
-  upload_wasm: "deploying",
-  instantiate_contract: "deploying",
-  generate_bindings: "integrating",
-  configure_contract: "integrating",
-  update_frontend_config: "integrating",
+  extract_abi: "integrating",
+  forge_inspect_abi: "integrating",
+  sync_abi_to_frontend: "integrating",
+  read_deployed_address: "integrating",
+  write_contract_address_constants: "integrating",
 };
 
 const TOOL_LABELS: Record<string, string> = {
-  compile_contract: "Compiled contract",
-  write_file: "Wrote file",
-  edit_file: "Edited file",
-  create_file: "Created file",
-  delete_file: "Deleted file",
-  run_command: "Ran command",
-  run_tests: "Ran tests",
-  test_contract: "Tested contract",
-  validate_contract: "Validated contract",
+  kickoff_project: "Planned project",
+  update_project_todos: "Updated todos",
+  save_prd: "Saved PRD",
+  delegate: "Delegated task",
+  sandbox_write: "Wrote file",
+  sandbox_edit: "Edited file",
+  overwrite_file: "Wrote file",
+  apply_patch: "Patched files",
+  sandbox_delete: "Deleted file",
+  bash: "Ran command",
+  forge_build: "Compiled contracts",
+  forge_test: "Ran contract tests",
+  forge_deploy_sepolia: "Deployed to Sepolia",
   deploy_contract: "Deployed contract",
-  upload_wasm: "Uploaded WASM",
-  instantiate_contract: "Instantiated contract",
-  generate_bindings: "Generated bindings",
-  configure_contract: "Configured contract",
-  update_frontend_config: "Updated frontend config",
+  bun_install: "Installed packages",
+  bun_run_build: "Built frontend",
+  bun_run_lint: "Linted frontend",
+  sync_abi_to_frontend: "Synced ABI",
+  write_contract_address_constants: "Wrote contract addresses",
+  slither_audit: "Ran Slither",
+  write_audit_report: "Wrote audit report",
 };
 
 function toolLabel(tool: string): string {
-  return TOOL_LABELS[tool] ?? tool.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+  return TOOL_LABELS[tool] ?? tool.replace(/_/g, " ").replace(/\w/g, c => c.toUpperCase());
 }
 
 function toolPhase(tool: string): PhaseKey {
@@ -110,14 +131,9 @@ function toolPhase(tool: string): PhaseKey {
 }
 
 function makeSummary(tool: string, args: Record<string, unknown>): string {
-  if (tool === "write_file" || tool === "edit_file" || tool === "create_file") {
-    const path = args.path as string | undefined;
-    return path ? path : "File updated";
-  }
-  if (tool === "run_command") {
-    const cmd = args.command as string | undefined;
-    return cmd ? cmd.slice(0, 60) : "Command executed";
-  }
+  if (typeof args.path === "string") return args.path;
+  if (typeof args.command === "string") return args.command.slice(0, 60);
+  if (tool === "delegate" && typeof args.subagent_name === "string") return args.subagent_name;
   return toolLabel(tool);
 }
 

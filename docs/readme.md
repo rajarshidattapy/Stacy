@@ -43,28 +43,32 @@
 ```
 stacy/
 ├── frontend/   Next.js IDE: Monaco editor, file tree, chat, terminal
-├── agent/      TypeScript agents (deepagents + LangGraph + Postgres memory) and skills
-├── stacyvm/    Self-hosted sandboxes for running agent code (Docker, gVisor, Firecracker)
+├── agent/      TypeScript agents (deepagents + LangGraph + Postgres memory), skills, HTTP/SSE server
+├── scripts/    setup + dev runners for the whole stack
 └── docs/       PRDs, design notes, IDE deep-dives
+```
+
+```
+  IDE :3000  ──HTTP/SSE──▶  agent server :8787  ──SDK──▶  StacyVM :7423  ──▶  sandbox (stacy-evm)
+                                   │
+                                   └──▶ Postgres :5432 (threads, checkpoints)
 ```
 
 ## ✦ Quick start
 
+Needs Node 18+, Docker running, and an Anthropic API key. Bun is optional; the scripts fall back to `npx bun`.
+
 ```bash
-# 1. Start the sandbox server (http://localhost:7423)
-npx stacyvm-setup@latest
-
-# 2. Set up the agents
-cd agent/agent-ts
-cp .env.example .env        # add ANTHROPIC_API_KEY, DATABASE_URL, ...
-bun install && bun run db:migrate
-
-# 3. Talk to an agent
-bun run harness --agent planner --no-sandbox --new-thread
-
-# 4. Run the IDE
-cd ../../frontend && bun install && bun dev
+npm run setup   # Postgres, StacyVM (npx stacyvm-setup@latest), sandbox image, deps, DB schema
+                # then put ANTHROPIC_API_KEY in agent/agent-ts/.env
+npm run dev     # StacyVM + agent server + IDE → http://localhost:3000
 ```
+
+In the IDE, click **Start Sandbox**, pick an agent in the chat bar (**Auto** begins with the planner), and chat. Files the agents write show up in the editor when each run ends.
+
+> Don't run `npx stacyvm-setup@latest` by hand from the repo root. It would treat the local `stacyvm/` reference copy as its own clone and `git reset --hard` it. `npm run setup` passes `--dir .stacyvm` to avoid that.
+
+The CLI harness still works without the IDE: `cd agent/agent-ts && bun run harness --agent planner --no-sandbox --new-thread`.
 
 ## ✦ Learn more
 

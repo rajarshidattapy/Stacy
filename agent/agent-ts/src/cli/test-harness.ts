@@ -1,13 +1,11 @@
-// Phase 0 test harness shell.
+// Interactive CLI test harness.
 //
-// At this stage no agent is wired yet — the harness only proves:
 //   * sandbox spawn / attach / cleanup via the StacyVM SDK
 //   * thread create / resume in Postgres
-//   * readline loop with clean shutdown on Ctrl+C
+//   * readline loop that runs one agent turn per line, rendered by the
+//     canonical event printer
 //
-// As later phases land, the placeholder echo is replaced with a real
-// agent.stream() invocation, and the canonical event printer renders the
-// stream.
+// The HTTP server (src/server) runs the same agents for the IDE frontend.
 import { readFile } from "node:fs/promises";
 import { createInterface } from "node:readline/promises";
 import { stdin as input, stdout as output } from "node:process";
@@ -17,12 +15,7 @@ import { getStacyClient, cacheSandbox, dropSandboxCache } from "../tools/stacyvm
 import { closePool } from "../memory/db.ts";
 import { createThread, getThread, setThreadStatus, touchThread } from "../memory/threads.ts";
 import { openAgentRun, runAgentTurn, closeAgentRun } from "./runAgent.ts";
-import { createSmartContractAgent } from "../agents/smartContract/index.ts";
-import { createAuditAgent } from "../agents/audit/index.ts";
-import { createFrontendAgent } from "../agents/frontend/index.ts";
-import { createIntegrationAgent } from "../agents/integration/index.ts";
-import { createPlannerAgent } from "../agents/planner/index.ts";
-import { createOrchestratorAgent } from "../agents/orchestrator/index.ts";
+import { buildAgent, SANDBOXLESS_AGENTS } from "../agents/registry.ts";
 
 const GREY = "\x1b[90m";
 const B = "\x1b[1m";
@@ -117,68 +110,9 @@ async function main(): Promise<void> {
   });
 
   // ── Wire the requested agent ───────────────────────────────────────────
-  // For Phase 1 only the smart-contract agent is wired. Others fall through
-  // to a placeholder until their phase lands.
-  let buildAgent: ((firstUserMessage: string, parentRunId: string) => Promise<{ agent: unknown; profileName: string }>) | null = null;
-  if (args.agent === "smart-contract") {
-    if (!sandbox) throw new Error("smart-contract agent requires a sandbox");
-    buildAgent = async (firstUserMessage, parentRunId) =>
-      createSmartContractAgent({
-        sandboxId: sandbox.id,
-        threadId: thread.id,
-        parentRunId,
-        initialUserMessage: firstUserMessage,
-        profileOverride: args.profile ?? undefined,
-      });
-  } else if (args.agent === "audit") {
-    if (!sandbox) throw new Error("audit agent requires a sandbox");
-    buildAgent = async (firstUserMessage, parentRunId) =>
-      createAuditAgent({
-        sandboxId: sandbox.id,
-        threadId: thread.id,
-        parentRunId,
-        initialUserMessage: firstUserMessage,
-        profileOverride: args.profile ?? undefined,
-      });
-  } else if (args.agent === "frontend") {
-    if (!sandbox) throw new Error("frontend agent requires a sandbox");
-    buildAgent = async (firstUserMessage, parentRunId) =>
-      createFrontendAgent({
-        sandboxId: sandbox.id,
-        threadId: thread.id,
-        parentRunId,
-        initialUserMessage: firstUserMessage,
-        profileOverride: args.profile ?? undefined,
-      });
-  } else if (args.agent === "integration") {
-    if (!sandbox) throw new Error("integration agent requires a sandbox");
-    buildAgent = async (firstUserMessage, parentRunId) =>
-      createIntegrationAgent({
-        sandboxId: sandbox.id,
-        threadId: thread.id,
-        parentRunId,
-        initialUserMessage: firstUserMessage,
-        profileOverride: args.profile ?? undefined,
-      });
-  } else if (args.agent === "planner") {
-    buildAgent = async (firstUserMessage, parentRunId) =>
-      createPlannerAgent({
-        threadId: thread.id,
-        parentRunId,
-        initialUserMessage: firstUserMessage,
-        profileOverride: args.profile ?? undefined,
-      });
-  } else if (args.agent === "orchestrator") {
-    if (!sandbox) throw new Error("orchestrator agent requires a sandbox");
-    buildAgent = async (firstUserMessage, parentRunId) =>
-      createOrchestratorAgent({
-        sandboxId: sandbox.id,
-        threadId: thread.id,
-        parentRunId,
-        initialUserMessage: firstUserMessage,
-        profileOverride: args.profile ?? undefined,
-        pauseBetweenPhases: !args.noPause,
-      });
+  const agentName = args.agent;
+  if (agentName && !sandbox && !SANDBOXLESS_AGENTS.has(agentName)) {
+    throw new Error(`${agentName} agent requires a sandbox`);
   }
 
   rl.prompt();
@@ -189,8 +123,8 @@ async function main(): Promise<void> {
       continue;
     }
 
-    if (!buildAgent) {
-      console.log(`${GREY}[harness] (agent=${args.agent ?? "—"} not wired yet) you said: ${text}${R}`);
+    if (!agentName) {
+      console.log(`${GREY}[harness] no --agent given; you said: ${text}${R}`);
       rl.prompt();
       continue;
     }
@@ -198,7 +132,7 @@ async function main(): Promise<void> {
     // Open the run row first so its UUID exists for the delegate tool's
     // captured parentRunId — agent.delegations.parent_run_id is FK to
     // agent.runs(id) and would fail otherwise.
-    const agentType = args.agent ?? "agent";
+    const agentType = agentName;
     const { runId } = await openAgentRun({
       agentType,
       threadId: thread.id,
@@ -213,7 +147,15 @@ async function main(): Promise<void> {
     };
 
     try {
-      const { agent } = await buildAgent(text, runId);
+      const { agent } = await buildAgent({
+        agent: agentName,
+        sandboxId: sandbox?.id ?? null,
+        threadId: thread.id,
+        parentRunId: runId,
+        initialUserMessage: text,
+        profileOverride: args.profile ?? undefined,
+        pauseBetweenPhases: !args.noPause,
+      });
       result = await runAgentTurn({
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         agent: agent as any,

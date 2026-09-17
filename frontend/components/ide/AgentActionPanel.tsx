@@ -59,8 +59,8 @@ function StepCard({ step }: { step: StepEntry }) {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  // Detect if summary looks like a Stellar contract address (56-char uppercase alphanumeric)
-  const isContractAddress = /^[A-Z0-9]{56}$/.test(step.summary);
+  // Detect if summary looks like an EVM contract address
+  const isContractAddress = /^0x[a-fA-F0-9]{40}$/.test(step.summary);
 
   return (
     <div

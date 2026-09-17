@@ -60,6 +60,7 @@ export function translateLangGraphEvent(raw: RawLangGraphEvent): AgentEvent | nu
               tool: tc.name,
               args: {},
               callId: tc.id,
+              planned: true,
             };
           }
         }

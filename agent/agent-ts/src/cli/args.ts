@@ -1,12 +1,6 @@
 // Argv parser for the test harness. Hand-rolled — no external dep — because
 // the flag set is small and the parsing rules are obvious.
-export type AgentName =
-  | "smart-contract"
-  | "frontend"
-  | "integration"
-  | "orchestrator"
-  | "planner"
-  | "audit";
+import { AGENT_NAMES, isAgentName, type AgentName } from "../agents/registry.ts";
 
 export interface HarnessArgs {
   agent: AgentName | null;
@@ -22,15 +16,6 @@ export interface HarnessArgs {
   noPause: boolean;           // orchestrator: disable pauseBetweenPhases
   keep: boolean;              // don't destroy spawned sandbox on exit
 }
-
-const VALID_AGENTS: AgentName[] = [
-  "smart-contract",
-  "frontend",
-  "integration",
-  "orchestrator",
-  "planner",
-  "audit",
-];
 
 export function parseArgs(argv: string[]): HarnessArgs {
   const args: HarnessArgs = {
@@ -53,10 +38,10 @@ export function parseArgs(argv: string[]): HarnessArgs {
     const next = argv[i + 1];
     switch (flag) {
       case "--agent":
-        if (!next || !VALID_AGENTS.includes(next as AgentName)) {
-          throw new Error(`--agent must be one of: ${VALID_AGENTS.join(", ")}`);
+        if (!isAgentName(next)) {
+          throw new Error(`--agent must be one of: ${AGENT_NAMES.join(", ")}`);
         }
-        args.agent = next as AgentName;
+        args.agent = next;
         i++;
         break;
       case "--sandbox":
