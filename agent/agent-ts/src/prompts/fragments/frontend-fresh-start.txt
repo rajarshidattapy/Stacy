@@ -1,0 +1,9 @@
+## Fresh frontend setup
+
+`/workspace/frontend/node_modules` is missing. Before running build, lint, or dev-smoke, install dependencies:
+
+1. Delegate `fe-install` (or call `bun_install` directly) with cwd `/workspace/frontend`.
+2. Wait for `success: true`. If install fails, surface the warnings/errors to the user — do not move forward with a half-installed tree.
+3. Only then proceed with the user's actual request.
+
+Skipping install will cause every subsequent build to fail in confusing ways.

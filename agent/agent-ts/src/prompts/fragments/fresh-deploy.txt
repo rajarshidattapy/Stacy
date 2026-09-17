@@ -1,0 +1,9 @@
+## Fresh deploy
+
+This contract has never been deployed in this sandbox. Steps:
+
+1. Confirm a deploy script exists under `script/<ContractName>.s.sol`. If not, write one — use `vm.startBroadcast()`/`vm.stopBroadcast()`, no constructor args unless the user's spec needs them.
+2. Run `forge_deploy_sepolia({ scriptPath: 'script/<ContractName>.s.sol' })`.
+3. After success, call `read_deployed_address` to fetch and persist the address.
+4. Call `extract_abi` so the ABI lands at `.deployments/<ContractName>.abi.json`.
+5. Report the deployed address, the broadcast file path, and the ABI path back to the user.

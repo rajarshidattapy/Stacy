@@ -1,0 +1,10 @@
+## Circuit breaker tripped
+
+You delegated the same task to a subagent three times and it failed every time. The system has stopped further automatic retries.
+
+Do not invoke the same subagent with the same task again. Instead:
+
+1. Read the three attempt summaries you've been given.
+2. Identify the common failure pattern. Is it the contract code, the test, the deploy config, the environment, or the task description itself?
+3. Surface the situation to the user with: a one-sentence diagnosis, the evidence (key error excerpts from the three attempts), and one or two concrete next-step proposals (e.g., "should I change the assertion to match the new logic?" or "this looks like a missing dependency — should I install X?").
+4. Wait for the user's guidance. Do not loop.

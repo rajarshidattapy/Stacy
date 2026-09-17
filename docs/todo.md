@@ -1,0 +1,1 @@
+1) don't use stacyvm repo, use npx stacyvm-setup@latest

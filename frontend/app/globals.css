@@ -1,0 +1,316 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "tw-shimmer";
+
+@font-face {
+  font-family: 'Adelphe Floreal';
+  src: url('/fonts/otf/Adelphe-FlorealRegular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Adelphe Floreal';
+  src: url('/fonts/otf/Adelphe-FlorealBold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Adelphe Fructidor Regular';
+  src: url('/fonts/otf/Adelphe-FructidorRegular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Adelphe Fructidor Regular';
+  src: url('/fonts/otf/Adelphe-FructidorBold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+  --purple-accent: oklch(0.628 0.224 304.5);
+}
+
+.dark {
+  --background: #0f0f0f;
+  --foreground: #e4e4e7;
+  --card: #1a1a1a;
+  --card-foreground: #e4e4e7;
+  --popover: #1a1a1a;
+  --popover-foreground: #e4e4e7;
+  --primary: #e4e4e7;
+  --primary-foreground: #0f0f0f;
+  --secondary: #27272a;
+  --secondary-foreground: #e4e4e7;
+  --muted: #27272a;
+  --muted-foreground: #a1a1a8;
+  --accent: #a855f7;
+  --accent-foreground: #fafafa;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #a855f7;
+  --chart-1: #a855f7;
+  --chart-2: #38bdf8;
+  --chart-3: #4ade80;
+  --chart-4: #fb923c;
+  --chart-5: #f472b6;
+  --sidebar: #09090b;
+  --sidebar-foreground: #e4e4e7;
+  --sidebar-primary: #a855f7;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #27272a;
+  --sidebar-accent-foreground: #e4e4e7;
+  --sidebar-border: #27272a;
+  --sidebar-ring: #a855f7;
+  --purple-accent: #a855f7;
+
+  /* IDE-specific tokens */
+  --ide-bg: 240 10% 3%;
+  --ide-panel: 240 6% 8%;
+  --ide-panel-hover: 240 6% 12%;
+  --ide-border: 240 5% 16%;
+  --ide-glow: 270 70% 50%;
+
+  /* Terminal */
+  --terminal-bg: 240 10% 5%;
+  --terminal-header: 240 6% 10%;
+
+  /* macOS window dots */
+  --dot-close: 0 72% 51%;
+  --dot-minimize: 45 93% 47%;
+  --dot-maximize: 39 100% 50%;
+
+  /* Status colors */
+  --status-idle: 240 5% 45%;
+  --status-compiling: 45 100% 50%;
+  --status-deploying: 270 70% 50%;
+  --status-success: 39 100% 50%;
+  --status-error: 0 72% 51%;
+}
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* IDE color tokens for Tailwind v4 */
+  --color-ide-bg: hsl(var(--ide-bg));
+  --color-ide-panel: hsl(var(--ide-panel));
+  --color-ide-panel-hover: hsl(var(--ide-panel-hover));
+  --color-ide-border: hsl(var(--ide-border));
+  --color-ide-glow: hsl(var(--ide-glow));
+  --color-terminal-bg: hsl(var(--terminal-bg));
+  --color-terminal-header: hsl(var(--terminal-header));
+  --color-status-idle: hsl(var(--status-idle));
+  --color-status-compiling: hsl(var(--status-compiling));
+  --color-status-deploying: hsl(var(--status-deploying));
+  --color-status-success: hsl(var(--status-success));
+  --color-status-error: hsl(var(--status-error));
+  /* Marquee Animations */
+  --animate-marquee: marquee var(--duration) linear infinite;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+}
+
+@layer components {
+  .ide-panel {
+    background-color: hsl(var(--ide-panel));
+    border: 1px solid hsl(var(--ide-border));
+    backdrop-filter: blur(24px);
+  }
+
+  .ide-panel-glass {
+    background-color: hsl(var(--ide-panel) / 0.5);
+    border: 1px solid hsl(var(--ide-border));
+    backdrop-filter: blur(24px);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 20px hsla(270, 70%, 50%, 0.15);
+  }
+
+  .glow-purple-intense {
+    box-shadow: 0 0 30px hsla(270, 70%, 50%, 0.25);
+  }
+
+  .macos-dot-close {
+    background-color: hsl(var(--dot-close));
+  }
+
+  .macos-dot-minimize {
+    background-color: hsl(var(--dot-minimize));
+  }
+
+  .macos-dot-maximize {
+    background-color: hsl(var(--dot-maximize));
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* Premium Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  /* v0 Screen Effect */
+  .v0-screen-glow {
+    box-shadow: 
+      inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.05),
+      0 20px 50px -12px rgba(0, 0, 0, 0.8);
+  }
+
+  .v0-panel-border {
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+}

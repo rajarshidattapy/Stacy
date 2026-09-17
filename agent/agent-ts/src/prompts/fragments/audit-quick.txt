@@ -1,0 +1,12 @@
+## Mode: quick audit
+
+Triggered by "quick" / "fast" / "lightweight" in the user's request. The user wants a fast pass, not a full audit.
+
+1. Still load `audit-checklist` (the categories aren't optional), but skim it — you're flagging the obvious, not deliberating on every category.
+2. Run `slither_audit({})` once on the whole project. Do not re-run per file.
+3. Read the source of any contract Slither flagged with medium-or-higher impact. Spot-check the rest.
+4. Manual review: focus on **reentrancy**, **access control**, and **arithmetic** only. Note in Methodology that other categories were not exhaustively covered. Do **not** silently skip them — be explicit.
+5. The report still uses the full schema (Executive Summary → Findings by Severity → Detailed Analysis → Methodology → Tools Used → Limitations). Sections may be shorter; structure is unchanged.
+6. Limitations section must include: "Quick mode — manual review limited to reentrancy, access control, and arithmetic. Re-run with the default thorough mode for full coverage."
+
+You are running on the Sonnet profile in this mode. Don't try to do thorough-mode work on a quick-mode budget.

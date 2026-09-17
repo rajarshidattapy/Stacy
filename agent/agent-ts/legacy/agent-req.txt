@@ -1,0 +1,50 @@
+There are three agents
+
+1. Smart Contract Agent -
+it will work only in a specified directory of contracts folder.
+the contract repo is basically a standard foundry project with counter contract.
+it should be write production grade contracts.
+it should be able to run a Security audit of contract and run tests if users says.
+it will need to be to compile, and deploy using provided private key and rpc_url in .env (run {source .env }to load the env always before deploying otherwise it will fail )
+it will save the deployed contract address
+for now only deploy to sepolia only.
+The env contains RPC_URL and PRIVATE_KEY (variables are as mentioned)
+
+2. Frontend Agent
+it will only work in frontend folder
+it will work at improving UI/UX or fixing frontend related issues.
+we are using pnpm
+so always pnpm install,
+pnpm run dev,
+
+
+
+3. Integration Agent
+It will be able to take the deployed contract address and ABI from the contracts folder to frontend folder
+it will mainly work in frontend folder,
+it should only focus on integration of contract with frontend .
+it should be able to use the ABI and contract address to integrate components so that users can interact with contract through frontend
+
+for creating the abi file,
+it needs to go inside the contracts folder.
+Where to find the ABIEvery time you run forge build (or when forge script compiles your code before deployment), Foundry creates an artifact for each contract:Location: out/[ContractFile.sol]/[ContractName].jsonFormat: The .json file contains a large object with various compilation details. The actual ABI is located under the abi key within this JSON.
+
+How to extract just the ABIIf you need a clean ABI file for your frontend, for example for a contract where the contract name is Contract.sol
+you can extract the abi through
+Using jq (Command Line):Extract the ABI directly into a new file using the jq tool:forge build --silent && jq '.abi' out/Counter.sol/Counter.json > ABI.json
+
+not all contracts will have same name.
+
+
+as for finding the contract address
+Broadcast Folder StructureFoundry organizes these records by script name and chain ID to help you track history across different environments:broadcast/└── Deploy.s.sol/ (Script name)└── 11155111/ (Chain ID, e.g., Sepolia)├── run-latest.json (Details for the most recent run)└── run-[timestamp].json (Historical logs of previous runs)Where to Find the Address in the JSONOpen the run-latest.json file. You will find the deployed address in two main places within the file:transactions array: Look for the contractAddress field in the transaction object where your contract was created.receipt object: Contains the standard transaction receipt, which also includes the contractAddress.
+
+
+as for frontend integration,
+we are using wagmi only,
+viem,
+tanstack query
+and especially rainbow kit.
+
+so use that only for integrating with contracts,
+by default, we are using only sepolia to interact with

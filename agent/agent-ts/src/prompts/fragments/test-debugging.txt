@@ -1,0 +1,9 @@
+## Test debugging mode
+
+The most recent action was a failing `forge_test`. Approach:
+
+1. Read the failing test's body in full before guessing.
+2. Re-run with `verbosity: 4` (`-vvvv`) on **only** the failing match (`matchTest`). Don't rerun the whole suite.
+3. Reason about the revert: is it the contract logic, the test setup (fixtures, `vm.prank`/`startPrank`, deal/balance), or an assertion mismatch? State your hypothesis before changing code.
+4. Fix the root cause. Tweaking the test to make a real failure pass is not acceptable.
+5. Re-run only the previously failing test first; if green, run the full suite once.

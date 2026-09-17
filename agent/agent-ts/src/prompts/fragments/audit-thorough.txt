@@ -1,0 +1,12 @@
+## Mode: thorough audit
+
+Run the full pass.
+
+1. Load both `audit-checklist` and `slither-output-interpretation` skills before any tool work.
+2. Enumerate every `.sol` file under `/workspace/contracts/src/` (and `/workspace/contracts/script/` if it's user-supplied logic, not boilerplate).
+3. Run `slither_audit({})` on the whole project once. Then, for any contract with non-trivial findings, re-run with `contractFile` set to that file to confirm.
+4. Walk every manual-review category from the base prompt against every contract. Be willing to spend time deliberating on subtle ones (storage layout in upgradeable contracts, oracle staleness, cross-function reentrancy).
+5. For every finding, map it to a real attacker workflow before assigning severity — not just "the linter said so." A Slither "high impact" that requires an unrealistic precondition is a low or informational, and you should say why in the description.
+6. The Detailed Analysis section in the report must include at least a Description and a Recommendation for each finding. Don't ship "TODO" or empty subsections.
+
+This is the default mode. Use the model's full reasoning budget. Take the time to be right.

@@ -1,0 +1,1194 @@
+[
+  {
+    "id": "bat",
+    "name": "Windows Bat Language Basics",
+    "description": "Provides snippets, syntax highlighting, bracket matching and folding in Windows batch files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "clojure",
+    "name": "Clojure Language Basics",
+    "description": "Provides syntax highlighting and bracket matching in Clojure files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "coffeescript",
+    "name": "CoffeeScript Language Basics",
+    "description": "Provides snippets, syntax highlighting, bracket matching and folding in CoffeeScript files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "configuration-editing",
+    "name": "Configuration Editing",
+    "description": "Provides capabilities (advanced IntelliSense, auto-fixing) in configuration files like settings, launch, and extension recommendation files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "copilot-chat",
+    "name": "GitHub Copilot Chat",
+    "description": "AI chat features powered by Copilot",
+    "author": "GitHub",
+    "version": "0.47.0",
+    "type": "extension"
+  },
+  {
+    "id": "cpp",
+    "name": "C/C++ Language Basics",
+    "description": "Provides snippets, syntax highlighting, bracket matching and folding in C/C++ files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "csharp",
+    "name": "C# Language Basics",
+    "description": "Provides snippets, syntax highlighting, bracket matching and folding in C# files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "css",
+    "name": "CSS Language Basics",
+    "description": "Provides syntax highlighting and bracket matching for CSS, LESS and SCSS files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "css-language-features",
+    "name": "CSS Language Features",
+    "description": "Provides rich language support for CSS, LESS and SCSS files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "dart",
+    "name": "Dart Language Basics",
+    "description": "Provides syntax highlighting & bracket matching in Dart files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "debug-auto-launch",
+    "name": "Node Debug Auto-attach",
+    "description": "Helper for auto-attach feature when node-debug extensions are not active.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "debug-server-ready",
+    "name": "Server Ready Action",
+    "description": "Open URI in browser if server under debugging is ready.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "diff",
+    "name": "Diff Language Basics",
+    "description": "Provides syntax highlighting & bracket matching in Diff files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "docker",
+    "name": "Docker Language Basics",
+    "description": "Provides syntax highlighting and bracket matching in Docker files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "dotenv",
+    "name": "Dotenv Language Basics",
+    "description": "Provides syntax highlighting and bracket matching in dotenv files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "emmet",
+    "name": "Emmet",
+    "description": "Emmet support for VS Code",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "extension-editing",
+    "name": "Extension Authoring",
+    "description": "Provides linting capabilities for authoring extensions.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "fsharp",
+    "name": "F# Language Basics",
+    "description": "Provides snippets, syntax highlighting, bracket matching and folding in F# files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "git",
+    "name": "Git",
+    "description": "Git SCM Integration",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "git-base",
+    "name": "Git Base",
+    "description": "Git static contributions and pickers.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "github",
+    "name": "GitHub",
+    "description": "GitHub features for VS Code",
+    "author": "vscode",
+    "version": "0.0.1",
+    "type": "extension"
+  },
+  {
+    "id": "github-authentication",
+    "name": "GitHub Authentication",
+    "description": "GitHub Authentication Provider",
+    "author": "vscode",
+    "version": "0.0.2",
+    "type": "extension"
+  },
+  {
+    "id": "go",
+    "name": "Go Language Basics",
+    "description": "Provides syntax highlighting and bracket matching in Go files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "groovy",
+    "name": "Groovy Language Basics",
+    "description": "Provides snippets, syntax highlighting and bracket matching in Groovy files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "grunt",
+    "name": "Grunt support for VS Code",
+    "description": "Extension to add Grunt capabilities to VS Code.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "gulp",
+    "name": "Gulp support for VSCode",
+    "description": "Extension to add Gulp capabilities to VSCode.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "handlebars",
+    "name": "Handlebars Language Basics",
+    "description": "Provides syntax highlighting and bracket matching in Handlebars files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "hlsl",
+    "name": "HLSL Language Basics",
+    "description": "Provides syntax highlighting and bracket matching in HLSL files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "html",
+    "name": "HTML Language Basics",
+    "description": "Provides syntax highlighting, bracket matching & snippets in HTML files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "html-language-features",
+    "name": "HTML Language Features",
+    "description": "Provides rich language support for HTML and Handlebar files",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "ini",
+    "name": "Ini Language Basics",
+    "description": "Provides syntax highlighting and bracket matching in Ini files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "ipynb",
+    "name": ".ipynb Support",
+    "description": "Provides basic support for opening and reading Jupyter's .ipynb notebook files",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "jake",
+    "name": "Jake support for VS Code",
+    "description": "Extension to add Jake capabilities to VS Code.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "java",
+    "name": "Java Language Basics",
+    "description": "Provides snippets, syntax highlighting, bracket matching and folding in Java files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "javascript",
+    "name": "JavaScript Language Basics",
+    "description": "Provides snippets, syntax highlighting, bracket matching and folding in JavaScript files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "json",
+    "name": "JSON Language Basics",
+    "description": "Provides syntax highlighting & bracket matching in JSON files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "json-language-features",
+    "name": "JSON Language Features",
+    "description": "Provides rich language support for JSON files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "julia",
+    "name": "Julia Language Basics",
+    "description": "Provides syntax highlighting & bracket matching in Julia files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "latex",
+    "name": "LaTeX Language Basics",
+    "description": "Provides syntax highlighting and bracket matching for TeX, LaTeX and BibTeX.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "less",
+    "name": "Less Language Basics",
+    "description": "Provides syntax highlighting, bracket matching and folding in Less files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "log",
+    "name": "Log",
+    "description": "Provides syntax highlighting for files with .log extension.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "lua",
+    "name": "Lua Language Basics",
+    "description": "Provides syntax highlighting and bracket matching in Lua files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "make",
+    "name": "Make Language Basics",
+    "description": "Provides syntax highlighting and bracket matching in Make files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "markdown",
+    "name": "Markdown Language Basics",
+    "description": "Provides snippets and syntax highlighting for Markdown.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "markdown-language-features",
+    "name": "Markdown Language Features",
+    "description": "Provides rich language support for Markdown.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "markdown-math",
+    "name": "Markdown Math",
+    "description": "Adds math support to Markdown in notebooks.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "media-preview",
+    "name": "Media Preview",
+    "description": "Provides VS Code's built-in previews for images, audio, and video",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "merge-conflict",
+    "name": "Merge Conflict",
+    "description": "Highlighting and commands for inline merge conflicts.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "mermaid-chat-features",
+    "name": "Mermaid Chat Features",
+    "description": "Adds Mermaid diagram support to built-in chats.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "microsoft-authentication",
+    "name": "Microsoft Account",
+    "description": "Microsoft authentication provider",
+    "author": "vscode",
+    "version": "0.0.1",
+    "type": "extension"
+  },
+  {
+    "id": "builtin-notebook-renderers",
+    "name": "Builtin Notebook Output Renderers",
+    "description": "Provides basic output renderers for notebooks",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "npm",
+    "name": "NPM support for VS Code",
+    "description": "Extension to add task support for npm scripts.",
+    "author": "vscode",
+    "version": "1.0.1",
+    "type": "extension"
+  },
+  {
+    "id": "objective-c",
+    "name": "Objective-C Language Basics",
+    "description": "Provides syntax highlighting and bracket matching in Objective-C files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "perl",
+    "name": "Perl Language Basics",
+    "description": "Provides syntax highlighting and bracket matching in Perl files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "php",
+    "name": "PHP Language Basics",
+    "description": "Provides syntax highlighting and bracket matching for PHP files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "php-language-features",
+    "name": "PHP Language Features",
+    "description": "Provides rich language support for PHP files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "powershell",
+    "name": "Powershell Language Basics",
+    "description": "Provides snippets, syntax highlighting, bracket matching and folding in Powershell files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "prompt",
+    "name": "Prompt Language Basics",
+    "description": "Syntax highlighting for Prompt and Instructions documents.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "pug",
+    "name": "Pug Language Basics",
+    "description": "Provides syntax highlighting and bracket matching in Pug files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "python",
+    "name": "Python Language Basics",
+    "description": "Provides syntax highlighting, bracket matching and folding in Python files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "r",
+    "name": "R Language Basics",
+    "description": "Provides syntax highlighting and bracket matching in R files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "razor",
+    "name": "Razor Language Basics",
+    "description": "Provides syntax highlighting, bracket matching and folding in Razor files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "references-view",
+    "name": "Reference Search View",
+    "description": "Reference Search results as separate, stable view in the sidebar",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "restructuredtext",
+    "name": "reStructuredText Language Basics",
+    "description": "Provides syntax highlighting in reStructuredText files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "ruby",
+    "name": "Ruby Language Basics",
+    "description": "Provides syntax highlighting and bracket matching in Ruby files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "rust",
+    "name": "Rust Language Basics",
+    "description": "Provides syntax highlighting and bracket matching in Rust files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "scss",
+    "name": "SCSS Language Basics",
+    "description": "Provides syntax highlighting, bracket matching and folding in SCSS files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "search-result",
+    "name": "Search Result",
+    "description": "Provides syntax highlighting and language features for tabbed search results.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "shaderlab",
+    "name": "Shaderlab Language Basics",
+    "description": "Provides syntax highlighting and bracket matching in Shaderlab files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "shellscript",
+    "name": "Shell Script Language Basics",
+    "description": "Provides syntax highlighting and bracket matching in Shell Script files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "simple-browser",
+    "name": "Simple Browser",
+    "description": "A very basic built-in webview for displaying web content.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "sql",
+    "name": "SQL Language Basics",
+    "description": "Provides syntax highlighting and bracket matching in SQL files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "swift",
+    "name": "Swift Language Basics",
+    "description": "Provides snippets, syntax highlighting and bracket matching in Swift files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "terminal-suggest",
+    "name": "Terminal Suggest for VS Code",
+    "description": "Extension to add terminal completions for zsh, bash, and fish terminals.",
+    "author": "vscode",
+    "version": "1.0.1",
+    "type": "extension"
+  },
+  {
+    "id": "theme-abyss",
+    "name": "Abyss Theme",
+    "description": "Abyss theme for Visual Studio Code",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "theme-defaults",
+    "name": "Default Themes",
+    "description": "The default Visual Studio light and dark themes",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "theme-kimbie-dark",
+    "name": "Kimbie Dark Theme",
+    "description": "Kimbie dark theme for Visual Studio Code",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "theme-monokai",
+    "name": "Monokai Theme",
+    "description": "Monokai theme for Visual Studio Code",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "theme-monokai-dimmed",
+    "name": "Monokai Dimmed Theme",
+    "description": "Monokai dimmed theme for Visual Studio Code",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "theme-quietlight",
+    "name": "Quiet Light Theme",
+    "description": "Quiet light theme for Visual Studio Code",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "theme-red",
+    "name": "Red Theme",
+    "description": "Red theme for Visual Studio Code",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "vscode-theme-seti",
+    "name": "Seti File Icon Theme",
+    "description": "A file icon theme made out of the Seti UI file icons",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "theme-solarized-dark",
+    "name": "Solarized Dark Theme",
+    "description": "Solarized dark theme for Visual Studio Code",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "theme-solarized-light",
+    "name": "Solarized Light Theme",
+    "description": "Solarized light theme for Visual Studio Code",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "theme-tomorrow-night-blue",
+    "name": "Tomorrow Night Blue Theme",
+    "description": "Tomorrow night blue theme for Visual Studio Code",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "tunnel-forwarding",
+    "name": "Local Tunnel Port Forwarding",
+    "description": "Allows forwarding local ports to be accessible over the internet.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "types",
+    "name": "types",
+    "description": "No description available",
+    "author": "vscode",
+    "version": "0.0.1",
+    "type": "extension"
+  },
+  {
+    "id": "typescript",
+    "name": "TypeScript Language Basics",
+    "description": "Provides snippets, syntax highlighting, bracket matching and folding in TypeScript files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "typescript-language-features",
+    "name": "JavaScript and TypeScript Language Features",
+    "description": "Provides rich language support for JavaScript and TypeScript.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "vb",
+    "name": "Visual Basic Language Basics",
+    "description": "Provides snippets, syntax highlighting, bracket matching and folding in Visual Basic files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "vscode-api-tests",
+    "name": "vscode-api-tests",
+    "description": "API tests for VS Code",
+    "author": "vscode",
+    "version": "0.0.1",
+    "type": "extension"
+  },
+  {
+    "id": "vscode-colorize-perf-tests",
+    "name": "vscode-colorize-perf-tests",
+    "description": "Colorize performance tests for VS Code",
+    "author": "vscode",
+    "version": "0.0.1",
+    "type": "extension"
+  },
+  {
+    "id": "vscode-colorize-tests",
+    "name": "vscode-colorize-tests",
+    "description": "Colorize tests for VS Code",
+    "author": "vscode",
+    "version": "0.0.1",
+    "type": "extension"
+  },
+  {
+    "id": "vscode-test-resolver",
+    "name": "vscode-test-resolver",
+    "description": "Test resolver for VS Code",
+    "author": "vscode",
+    "version": "0.0.1",
+    "type": "extension"
+  },
+  {
+    "id": "xml",
+    "name": "XML Language Basics",
+    "description": "Provides syntax highlighting and bracket matching in XML files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "yaml",
+    "name": "YAML Language Basics",
+    "description": "Provides syntax highlighting and bracket matching in YAML files.",
+    "author": "vscode",
+    "version": "10.0.0",
+    "type": "extension"
+  },
+  {
+    "id": "theme-active4d",
+    "name": "Active4D Theme",
+    "description": "A beautiful Active4D color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-all-hallows-eve",
+    "name": "All Hallows Eve Theme",
+    "description": "A beautiful All Hallows Eve color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-amy",
+    "name": "Amy Theme",
+    "description": "A beautiful Amy color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-birds-of-paradise",
+    "name": "Birds of Paradise Theme",
+    "description": "A beautiful Birds of Paradise color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-blackboard",
+    "name": "Blackboard Theme",
+    "description": "A beautiful Blackboard color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-brilliance-black",
+    "name": "Brilliance Black Theme",
+    "description": "A beautiful Brilliance Black color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-brilliance-dull",
+    "name": "Brilliance Dull Theme",
+    "description": "A beautiful Brilliance Dull color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-chrome-devtools",
+    "name": "Chrome DevTools Theme",
+    "description": "A beautiful Chrome DevTools color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-clouds-midnight",
+    "name": "Clouds Midnight Theme",
+    "description": "A beautiful Clouds Midnight color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-clouds",
+    "name": "Clouds Theme",
+    "description": "A beautiful Clouds color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-cobalt",
+    "name": "Cobalt Theme",
+    "description": "A beautiful Cobalt color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-cobalt2",
+    "name": "Cobalt2 Theme",
+    "description": "A beautiful Cobalt2 color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-dawn",
+    "name": "Dawn Theme",
+    "description": "A beautiful Dawn color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-dracula",
+    "name": "Dracula Theme",
+    "description": "A beautiful Dracula color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-dreamweaver",
+    "name": "Dreamweaver Theme",
+    "description": "A beautiful Dreamweaver color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-eiffel",
+    "name": "Eiffel Theme",
+    "description": "A beautiful Eiffel color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-espresso-libre",
+    "name": "Espresso Libre Theme",
+    "description": "A beautiful Espresso Libre color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-github-dark",
+    "name": "GitHub Dark Theme",
+    "description": "A beautiful GitHub Dark color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-github-light",
+    "name": "GitHub Light Theme",
+    "description": "A beautiful GitHub Light color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-github",
+    "name": "GitHub Theme",
+    "description": "A beautiful GitHub color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-idle",
+    "name": "IDLE Theme",
+    "description": "A beautiful IDLE color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-katzenmilch",
+    "name": "Katzenmilch Theme",
+    "description": "A beautiful Katzenmilch color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-kuroir-theme",
+    "name": "Kuroir Theme Theme",
+    "description": "A beautiful Kuroir Theme color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-lazy",
+    "name": "LAZY Theme",
+    "description": "A beautiful LAZY color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-magicwb--amiga-",
+    "name": "MagicWB (Amiga) Theme",
+    "description": "A beautiful MagicWB (Amiga) color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-merbivore-soft",
+    "name": "Merbivore Soft Theme",
+    "description": "A beautiful Merbivore Soft color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-merbivore",
+    "name": "Merbivore Theme",
+    "description": "A beautiful Merbivore color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-monokai-bright",
+    "name": "Monokai Bright Theme",
+    "description": "A beautiful Monokai Bright color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-monokai",
+    "name": "Monokai Theme",
+    "description": "A beautiful Monokai color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-night-owl",
+    "name": "Night Owl Theme",
+    "description": "A beautiful Night Owl color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-nord",
+    "name": "Nord Theme",
+    "description": "A beautiful Nord color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-oceanic-next",
+    "name": "Oceanic Next Theme",
+    "description": "A beautiful Oceanic Next color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-pastels-on-dark",
+    "name": "Pastels on Dark Theme",
+    "description": "A beautiful Pastels on Dark color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-slush-and-poppies",
+    "name": "Slush and Poppies Theme",
+    "description": "A beautiful Slush and Poppies color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-solarized-dark",
+    "name": "Solarized-dark Theme",
+    "description": "A beautiful Solarized-dark color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-solarized-light",
+    "name": "Solarized-light Theme",
+    "description": "A beautiful Solarized-light color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-spacecadet",
+    "name": "SpaceCadet Theme",
+    "description": "A beautiful SpaceCadet color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-sunburst",
+    "name": "Sunburst Theme",
+    "description": "A beautiful Sunburst color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-textmate--mac-classic-",
+    "name": "Textmate (Mac Classic) Theme",
+    "description": "A beautiful Textmate (Mac Classic) color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-tomorrow-night-blue",
+    "name": "Tomorrow-Night-Blue Theme",
+    "description": "A beautiful Tomorrow-Night-Blue color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-tomorrow-night-bright",
+    "name": "Tomorrow-Night-Bright Theme",
+    "description": "A beautiful Tomorrow-Night-Bright color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-tomorrow-night-eighties",
+    "name": "Tomorrow-Night-Eighties Theme",
+    "description": "A beautiful Tomorrow-Night-Eighties color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-tomorrow-night",
+    "name": "Tomorrow-Night Theme",
+    "description": "A beautiful Tomorrow-Night color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-tomorrow",
+    "name": "Tomorrow Theme",
+    "description": "A beautiful Tomorrow color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-twilight",
+    "name": "Twilight Theme",
+    "description": "A beautiful Twilight color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-upstream-sunburst",
+    "name": "Upstream Sunburst Theme",
+    "description": "A beautiful Upstream Sunburst color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-vibrant-ink",
+    "name": "Vibrant Ink Theme",
+    "description": "A beautiful Vibrant Ink color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-xcode-default",
+    "name": "Xcode_default Theme",
+    "description": "A beautiful Xcode_default color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-zenburnesque",
+    "name": "Zenburnesque Theme",
+    "description": "A beautiful Zenburnesque color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-iplastic",
+    "name": "iPlastic Theme",
+    "description": "A beautiful iPlastic color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-idlefingers",
+    "name": "idleFingers Theme",
+    "description": "A beautiful idleFingers color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-krtheme",
+    "name": "krTheme Theme",
+    "description": "A beautiful krTheme color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  },
+  {
+    "id": "theme-monoindustrial",
+    "name": "monoindustrial Theme",
+    "description": "A beautiful monoindustrial color theme for Monaco Editor.",
+    "author": "Monaco",
+    "version": "1.0.0",
+    "type": "theme"
+  }
+]

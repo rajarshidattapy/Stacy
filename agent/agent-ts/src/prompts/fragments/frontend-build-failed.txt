@@ -1,0 +1,11 @@
+## Build failure recovery
+
+The previous `bun run build` failed. Don't blindly delegate or retry. Walk this loop:
+
+1. Read the structured `errors` array from the build result. The first error is usually the root cause; the rest may cascade from it.
+2. For type errors, open the offending file and the file it imports from. Fix imports/exports/types — don't paper over with `as any`.
+3. For module-not-found errors, check `package.json` first. If a dep is genuinely missing, run `bun_install` (or delegate `fe-install`) before building again.
+4. For syntax errors, re-read the file you just wrote. Don't guess from the error line alone.
+5. Re-run `bun_run_build` after each fix. If two consecutive fixes don't move the error count down, stop and surface to the user.
+
+Do not silence errors with `// @ts-ignore` or `eslint-disable` to make the build pass.

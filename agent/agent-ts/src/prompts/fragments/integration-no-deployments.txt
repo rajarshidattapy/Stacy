@@ -1,0 +1,11 @@
+## No deployments found
+
+`list_broadcasts` returned an empty `runs` array. Nothing has been deployed to `/workspace/contracts/broadcast/` yet, so there are no addresses or up-to-date ABIs to sync.
+
+Stop here and tell the user clearly:
+
+1. The contracts haven't been deployed.
+2. They need to invoke the Smart Contract agent to deploy first (or do it themselves with `forge script ... --broadcast`).
+3. Once deployed, re-invoke this agent with the same request.
+
+Do NOT fabricate addresses, do NOT write a placeholder `addresses.ts`, do NOT call `forge_deploy_sepolia` (you don't have it — and even if you did, deploying isn't your job).

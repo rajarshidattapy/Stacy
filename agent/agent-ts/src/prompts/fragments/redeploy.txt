@@ -1,0 +1,8 @@
+## Redeploy
+
+A previous deployment of this contract exists (see `.deployments/<ContractName>.address`). The user has asked for a fresh deployment.
+
+1. Don't reuse the old address — a redeploy produces a new contract instance.
+2. Make sure no consumer (frontend/integration) is mid-task expecting the old address. If you have any doubt, mention it before proceeding.
+3. After the new deploy, **overwrite** the `.address` file and re-run `extract_abi` (the ABI may have changed).
+4. Note in your final summary that the address has changed, so the integration agent re-syncs constants.

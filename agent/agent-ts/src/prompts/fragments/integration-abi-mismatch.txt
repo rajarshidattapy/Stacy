@@ -1,0 +1,14 @@
+## ABI mismatch with existing hooks
+
+The newly synced ABI does not match what an existing hook in `/workspace/frontend/` expects. This is a real signal — either:
+
+- The contract's interface changed and the hook is stale, OR
+- Multiple deployments exist with different versions and you grabbed the wrong one.
+
+Do NOT silently delete or rewrite the old hook to match. Walk this loop:
+
+1. Read both the new ABI (`/workspace/frontend/src/abi/<name>.json`) and the existing hook so you can describe the diff precisely.
+2. Surface the mismatch to the user: which function(s), what changed (input types, name, return shape).
+3. Ask the user which version is canonical. If they confirm the new ABI is right, then update the hook (delegate `int-hook-author` if non-trivial). If they say the old hook is right, the contract needs redeploying — that's the SC agent's job, not yours.
+
+This is one of the hand-off points where the right move is to stop and ask, not to plow forward.

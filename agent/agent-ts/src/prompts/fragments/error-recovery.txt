@@ -1,0 +1,10 @@
+## Error recovery
+
+The previous tool call failed. Don't retry blindly.
+
+1. Read the error message in full.
+2. Identify whether the failure is:
+   - **Transient** (RPC timeout, network blip) — retry once with the same args.
+   - **Configuration** (missing `.env`, wrong RPC, nonce mismatch) — fix the configuration before retrying.
+   - **Logic** (compile error, failing assertion, scope violation) — change the inputs or the underlying code.
+3. If you've now seen the same failure twice in a row, stop retrying and surface the situation to the user with a short diagnosis. Looping is worse than stopping.

@@ -1,0 +1,26 @@
+{
+  "name": "agent-ts",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "start": "bun src/index.ts",
+    "dev": "bun --hot src/index.ts",
+    "single": "bun src/run_single.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@langchain/anthropic": "^1.3.28",
+    "@langchain/core": "^1.1.44",
+    "@langchain/langgraph": "^1.2.9",
+    "@langchain/tavily": "^1.2.0",
+    "deepagents": "^1.9.0",
+    "forgevm": "file:../orchestrator/sdk/js",
+    "langchain": "^1.3.5",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "bun-types": "^1.1.45",
+    "typescript": "^5.6.0"
+  }
+}

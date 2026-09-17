@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "lib": ["ES2022", "DOM"],
+    "types": ["bun-types", "node"],
+    "baseUrl": ".",
+    "paths": {
+      "stacyvm": ["../stacyvm/sdk/js/src/index.ts"],
+      "stacyvm/*": ["../stacyvm/sdk/js/src/*"]
+    }
+  },
+  "include": ["src/**/*", "scripts/**/*"]
+}

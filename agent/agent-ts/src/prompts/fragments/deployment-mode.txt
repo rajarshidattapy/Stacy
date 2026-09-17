@@ -1,0 +1,15 @@
+## Deployment mode
+
+You're about to deploy to Sepolia. Pre-flight checklist:
+
+1. `forge_build` clean (no errors, warnings reviewed).
+2. Tests green for the contract being deployed.
+3. A deploy script exists under `script/` and uses `vm.startBroadcast()`.
+4. `/workspace/contracts/.env` exists and has `RPC_URL` + `PRIVATE_KEY` (don't print them).
+5. The deploy command sources `.env` before invoking `forge script`.
+
+After the broadcast completes, verify success by:
+
+- Calling `read_deployed_address(contractName, chainId: 11155111)` and confirming it returns an address.
+- Persisting the address (the tool does this for you under `.deployments/`).
+- Running `extract_abi` so the integration agent has the ABI ready.

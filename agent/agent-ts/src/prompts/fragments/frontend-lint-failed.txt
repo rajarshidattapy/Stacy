@@ -1,0 +1,8 @@
+## Lint failure recovery
+
+The previous `bun run lint` reported issues. Prefer the `fe-lint-fix` subagent — it runs in an isolated context and fixes file-by-file.
+
+When fixing inline:
+1. Group issues by file. Open the file once, fix everything in it, save once.
+2. Don't auto-fix by adding `eslint-disable` comments. Address the root cause (rename a variable, drop a `console.log`, fix the dependency array).
+3. After fixes, re-run `bun_run_lint`. The `success` flag must be true before you stop.
